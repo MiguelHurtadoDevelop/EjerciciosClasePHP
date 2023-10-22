@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang ="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>formulario tipo Text</title>
+
+</head>
+<body>
+<h1>Formulario</h1>
+
+<form method="post" action="Ejercicio1.php">
+    <p>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre"  name="nombre" minlength="5" required>
+    </p>
+    <p>
+        <label for="apellidos">apellidos:</label>
+        <input type="text" id="apellidos"  name="apellidos" minlength="5" required>
+    </p>
+    <p>
+        <label for="fecha">Fecha de nacimiento:</label>
+        <input type="date" id="fecha"  name="fecha"  required>
+    </p>
+    <p>
+    <label for="correo">correo:</label>
+    <input type="email" id="correo"  name="correo" minlength="5" required>
+    </p>
+
+    <p>
+        <label for="lenguajes">¿Que lenguajes conoces?</label>
+        <label for="lenguajes"><input type="checkbox"  id="lenguajes" name="lenguajes[]" value="Php" checked>Php</label>
+        <label ><input type="checkbox"  name="lenguajes[]" value="c++">C++</label>
+        <label ><input type="checkbox"  name="lenguajes[]" value="JavaScript">JavaScript</label>
+        <label ><input type="checkbox"  name="lenguajes[]" value="Python">phyton</label>
+    </p>
+
+    <p>
+        <label for="Comentarios">Comentarios:</label>
+        <textarea id="Comentarios"  name="Comentarios" ></textarea>
+
+    </p>
+
+    <p>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña"  name="contraseña" minlength="5" required>
+    </p>
+
+    <p>
+        <label for="contraseña">Repita la contraseña:</label>
+        <input type="password" id="contraseña2"  name="contraseña" minlength="5" required>
+    </p>
+
+    <input type="submit" value="submit">
+</form>
+
+
+</body>

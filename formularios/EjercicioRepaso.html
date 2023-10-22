@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivienda</title>
+</head>
+<body>
+    <h1>Insercion de vivienda</h1>
+
+    <p>Introduzca los  datos de la vivienda</p>
+
+    <form>
+        <label for="TipoVivienda"> Tipo de vivienda: </label>
+        <select name="TipoVivienda">
+            <option value="PI">Piso</option>
+            <option value="AD">Casa Adosada</option>
+            <option value="CH">Chalet</option>
+            <option value="BA">Casa baja</option>
+        </select><br>
+
+        <label for="Zona">Zona</label>
+        <select name="Zona" multiple>
+            <optgroup label="Granada">
+                <option value="CE">Centro</option>
+                <option value="CH">Chana</option>
+                <option value="MA">Maracena</option>
+                <option value="ZA">Zaidin</option>
+            </optgroup>
+            <optgroup label="Malaga">
+                <option value="FU">Fuengirola</option>
+                <option value="MA">Malagueta</option>
+                <option value="AR">Arrollo de la miel</option>
+                
+            </optgroup>
+    
+            <optgroup label="Sevilla">
+                <option value="NE">Nervión</option>
+                <option value="RE">Remedios</option>
+                <option value="EG">Egipto</option>
+                
+            </optgroup>
+            
+        </select>
+
+        <p>
+            <label for="direccion">Dirección</label>
+            <input type="text" placeholder="Direccón" name="direccion">
+        </p>
+
+        <p>
+            <label for="">Número de dormitorios</label>
+
+            <input type="radio" id="1" name="num_dormitorios" value="1" >
+            <label for="1">1</label>
+            <input type="radio" id="2" name="num_dormitorios" value="2" >
+            <label for="2">2</label>
+            <input type="radio" id="3" name="num_dormitorios" value="3" >
+            <label for="3">3</label>
+            <input type="radio" id="4" name="num_dormitorios" value="4" checked >
+            <label for="4">4</label>
+            <input type="radio" id="5" name="num_dormitorios" value="5" >
+            <label for="5">5</label>
+
+        </p>
+
+        <p>
+            <label for="precio">Precio:</label>
+            <input type="text" name="precio" placeholder="precio">
+            <label for="precio">€</label>
+        </p>
+
+        <p>
+            <label for="Tamaño">Tamaño:</label>
+            <input type="number" name="Tamaño" placeholder="tamaño">
+            <label for="Tamaño">metros cuadrados</label>
+        </p>
+
+        <p>
+            <label for="piscina">Extras(marque los que procedan):</label>
+            <input type="checkbox" id="Piscina" name="Piscina" >
+            <label for="Piscina">Piscina</label>
+
+            <input type="checkbox" id="Jardin" name="Jardin">
+            <label for="Jardin">Jardin</label>
+
+            <input type="checkbox" id="Garage" name="Garage" checked>
+            <label for="Garage">Garage</label>
+        </p>
+        <p>
+            <label for="img">Foto:</label>
+            <input type="file" id="img" name="img" accept="image/*">
+        </p>
+        <p>
+            <label for="Observaciones ">Observaciones</label>
+            <textarea rows="10" cols="100" placeholder="Observaciones"  name="Observaciones"></textarea>
+        </p>
+    </form>
+    
+</body>
+</html>

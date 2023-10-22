@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang ="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>formulario tipo Text</title>
+
+</head>
+<body>
+<h1>Formulario</h1>
+
+<form method="post" action="validaRegistraUsu.php">
+    <p>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre"  name="nombre" minlength="5" required>
+    </p>
+    <p>
+        <label for="apellidos">apellidos:</label>
+        <input type="text" id="apellidos"  name="apellidos" minlength="5" required>
+    </p>
+    <p>
+        <label for="edad">edad:</label>
+        <input type="text" id="edad"  name="edad"  required>
+    </p>
+        <label for="correo">correo:</label>
+        <input type="email" id="correo"  name="correo" minlength="5" required>
+    </p>
+    <input type="submit" value="submit">
+</form>
+
+
+</body>

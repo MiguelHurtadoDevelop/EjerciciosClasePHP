@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Radio Buttons</h1>
+
+    <form action="/bienvenido.php">
+        <p>Seleccione su lenguaje favorito: </p>
+
+        <input type="radio" id="html" name="fav_languaje" value="HTML" checked>
+        <label for="html">HTML</label>
+
+        <input type="radio" id="css" name="fav_languaje" value="css" >
+        <label for="css">CSS</label>
+
+        <input type="radio" id="javascript" name="fav_languaje" value="JavaScript" >
+        <label for="javascript">JavaScript</label>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+    <form action="/calculadoraimpuestos.php">
+
+        <input type="checkbox" id="vehiculo1" name="vehicle1" checked>
+        <label for="vehiculo1">Tengo un bici</label><br>
+
+        <input type="checkbox" id="vehiculo2" name="vehicle2">
+        <label for="vehiculo2">Tengo un coche</label><br>
+
+        <input type="checkbox" id="vehiculo3" name="vehicle3">
+        <label for="vehiculo3">Tengo un barco</label><br>
+
+        <input type="submit" value="Enviar">
+
+
+
+    </form>
+    
+</body>
+</html>

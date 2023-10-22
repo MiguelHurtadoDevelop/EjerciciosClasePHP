@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang ="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>formulario tipo Text</title>
+
+</head>
+<body>
+
+<form method="post" action="tipoFile.php" enctype="multipart/form-data">
+    <p>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" name="nombre" required>
+    </p>
+    <p>
+        <label for="correo">Correo electronico</label>
+        <input type="email" id="correo" name="correo">
+    </p>
+    <p>
+        <label for="foto">Imagen</label>
+        <input type="file" id="foto" name="foto" placeholder="Añede una foto tuya">
+    </p>
+
+
+    <button type="submit" >Enviar</button>
+</form>
+
+
+</body>
+
+
+</html>

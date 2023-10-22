@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjFormulario</title>
+</head>
+<body>
+    <form action="bienvenido.php" method="post" target="_blank">
+        <label for="Nombre">Nombre: </label>
+        <input type="text" placeholder="Nombre" name="Nombre" required><br>
+        
+        <label for="E-Mail">E-Mail: </label>
+        <input type="email" placeholder="E-Mail" name="E-Mail" autocomplete="additional-name"><br>
+        
+        <label for="Telefono">telefono: </label>
+        <input type="tel" placeholder="Telefono" name="Telefono"><br>
+
+        <label for="Buscar:">Buscar: </label>
+        <input type="search" placeholder="Buscar" name="Buscar"><br>
+
+        <label for="Numero1">Numero del 1 al 10: </label>
+        <input type="number" placeholder="Numero1" name="Numero del 1 al 10" max="10" min="1"><br>
+        
+        <label for="Numero2">Numero del 1 al 100: </label>
+        <input type="range" placeholder="Numero2" name="Numero del 1 al 100" max="100" min="1"><br>
+
+        <label for="color">Color: </label>
+        <input type="color" placeholder="Color" name="Color"><br>
+
+        <h3>Tipos de fecha:</h3>
+
+        <label for="Dia">Dia: </label>
+        <input type="date" placeholder="dia" name="dia"><br>
+
+        <label for="Mes">Mes: </label>
+        <input type="month" placeholder="Mes" name="Mes"><br>
+
+        <label for="Semana">Semana: </label>
+        <input type="week" placeholder="Semana" name="Semana"><br>
+
+        <label for="Hora">Hora: </label>
+        <input type="time" placeholder="Hora" name="Hora"><br>
+
+        <label for="fecha local">fecha local: </label>
+        <input type="datetime-local" placeholder="fecha local" name="fecha local"><br>
+
+        <input type="submit" value="Enviar"> 
+    </form>
+</body>
+</html>
