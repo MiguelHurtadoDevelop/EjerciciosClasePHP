@@ -22,7 +22,7 @@
     </form>
     <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        header("Location: http://localhost/EjerciciosClasePHP/ModeloVistaControlador/BarajaMVC/index.php?controller=Carta&action=mostrarCarta&palo=" . $_POST['palos'] . "&numero=" . $_POST['numero']);
+        header("Location: http://localhost/EjerciciosClasePHP/ModeloVistaControlador/BarajaMVC/EjemploBasico.php?controller=Carta&action=mostrarCarta&palo=" . $_POST['palos'] . "&numero=" . $_POST['numero']);
     }
         ?>
 </body>
