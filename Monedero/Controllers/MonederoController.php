@@ -2,66 +2,62 @@
 
     namespace Controllers;
 
+
     use Models\Monedero;
     use Lib\Pages;
-    use Models\Registro;
+
 
     class MonederoController{
+
+        /**
+         * @var Monedero
+         * Variable monedero del tipo Moneder
+         */
         private Monedero $monedero;
+        /**
+         * @var
+         * Variable del tipo Pagess
+         */
         private Pages $pages;
 
+        /**
+         *Instanciamos dos objetos, uno de la clase Monedero y otro de la clase Pages
+         */
         public function __construct(){
             $this->monedero = new Monedero();
             $this->pages = new Pages();
+            
         }
-        public function guardarEdicion() {
-            if (isset($_GET['concepto'])  && isset($_GET['nuevaFecha']) && isset($_GET['nuevoImporte'])) {
-                $concepto = $_GET['concepto'];
 
-                $nuevaFecha = $_GET['nuevaFecha'];
-                $nuevoImporte = $_GET['nuevoImporte'];
 
-                $registros = $this->monedero->getRegistros();
-
-                // Busca el registro que coincide con el concepto en la lista de registros
-                foreach ($registros as &$registro) {
-                    if ($registro['Concepto'] === $concepto) {
-                        // Actualiza los valores del registro
-                        $registro['Concepto'] = $concepto;
-                        $registro['Fecha'] = $nuevaFecha;
-                        $registro['Importe'] = $nuevoImporte;
-
-                    }
-                }
-
-                $this->monedero->setRegistros($registros);
-                $this->monedero->actualizarXML();
-
-                $this->MostrarMonedero();
-            } else {
-                // Manejo de errores si los campos no están definidos o faltan datos.
-                echo "Error: Faltan datos necesarios para guardar la edición.";
-            }
-        }
+        /**
+         * @return void
+         * Metodo que obtiene mediante GET el indice del registro y lo borra, despues nos manda a la pagina principal
+         */
         public function borrarRegistro() {
-            if (isset($_GET['concepto'])) {
-                $conceptoABorrar = $_GET['concepto'];
+            if (isset($_GET['indice'])) {
+                $indiceABorrar = $_GET['indice'];
 
                 $registros = $this->monedero->getRegistros();
 
-                // Recorremos los registros y eliminamos los que coinciden con el concepto
-                $registrosActualizados = array_filter($registros, function ($registro) use ($conceptoABorrar) {
-                    return $registro['Concepto'] !== $conceptoABorrar;
+
+                $registrosActualizados = array_filter($registros, function ($registro) use ($indiceABorrar) {
+                    return $registro['Indice'] !== $indiceABorrar;
                 });
 
                 $this->monedero->setRegistros(array_values($registrosActualizados));
                 $this->monedero->actualizarXML();
             }
 
-            $this->MostrarMonedero();
+            header("Location:".URL_DEFAULT);
         }
-        public function añadirRegistro(){
 
+        /**
+         * @return void
+         * Metodo que obtiene mediante GET el $concepto, $fecha e $importe del nuevo registro y lo añade, despues nos
+         * manda a la pagina principal
+         */
+        public function añadirRegistro(){
             $concepto=$_GET['concepto'];
             $fecha=$_GET['fecha'];
             $importe=$_GET['cantidad'];
@@ -71,21 +67,113 @@
                 'Importe' => $importe
             );
             $this->monedero->agregarRegistro($nuevoRegistro);
-
-
-            $this->MostrarMonedero();
+            header("Location:".URL_DEFAULT);
         }
 
+        /**
+         * @return void
+         * Metodo que obtiene mediante GET el $concepto, $fecha , $importe Editados y el indice del Registro a
+         * editar y lo edita, despues nos manda a la pagina principal
+         */
+        public function editarRegistro(){
+
+            $concepto=$_GET['concepto'];
+            $fecha=$_GET['fecha'];
+            $importe=$_GET['cantidad'];
+            $indice=$_GET['indice'];
+
+            $nuevoRegistro = array(
+                'Concepto' => $concepto,
+                'Fecha' => $fecha,
+                'Importe' => $importe
+            );
+
+            $this->monedero->updateRegistro($indice, $nuevoRegistro);
+
+            header("Location:".URL_DEFAULT);
+
+        }
+
+
+        /**
+         * @return void
+         * Metodo que obtiene mediante GET el concepto a buscar y lo busca entre los registros, , despues nos manda
+         * a la pagina principal pasandole solo los registros encontrados
+         */
+        public function buscarRegistro(){
+            $registroABuscar = $_GET['conceptoBuscar'];
+            $registroBuscado = $this->monedero->buscarRegistro($registroABuscar);
+
+            $this->pages->render('Views/mostrarMonedero', ['monedero' =>$registroBuscado]);
+        }
+
+        /**
+         * @return void
+         * Metodo que nos ordena por concepto los registros, despues nos manda a la pagina principal
+         */
+        public function ordernarPorConcepto(){
+                $registros = $this->monedero->getRegistros();
+
+                usort($registros, function($a, $b) {
+                    return strcmp($a['Concepto'], $b['Concepto']);
+                });
+
+
+                $this->monedero->ordenarRegistros($registros);
+
+            header("Location:".URL_DEFAULT);
+        }
+
+        /**
+         * @return void
+         * Metodo que nos ordena por fecha los registros, despues nos manda a la pagina principal
+         */
+        public function ordernarPorFecha(){
+            $registros = $this->monedero->getRegistros();
+
+            usort($registros, function ($a, $b) {
+                $fechaA = \DateTime::createFromFormat('d/m/Y', $a['Fecha']);
+                $fechaB = \DateTime::createFromFormat('d/m/Y', $b['Fecha']);
+        
+                // Compara las fechas
+                return $fechaA <=> $fechaB;
+            });
+        
+            $this->monedero->ordenarRegistros($registros);
+            header("Location:".URL_DEFAULT);
+        }
+
+        /**
+         * @return void
+         * Metodo que nos ordena por Importe los registros, despues nos manda a la pagina principal
+         */
+        public function ordernarPorImporte(){
+            $registros = $this->monedero->getRegistros();
+        
+            usort($registros, function($a, $b) {
+                return $a['Importe'] <=> $b['Importe'];
+            });
+        
+            $this->monedero->ordenarRegistros($registros);
+            header("Location:".URL_DEFAULT);
+        }
+
+
+        /**
+         * @param Monedero|null $monedero
+         * @return void
+         * Metodo que nos manda a la vista mostrarMonedero pasandole los registros de $monedero
+         */
         public function MostrarMonedero(Monedero $monedero = null){
 
             if($monedero == null){
                 $monedero = $this->monedero;
             }
 
-
             $this->pages->render('Views/mostrarMonedero', ['monedero' => $monedero->getRegistros()]);
-
 
         }
 
+
     }
+

@@ -3,8 +3,17 @@
 namespace Controllers;
 
 require_once ('autoload.php');
+
+/**
+ * Clase que nos controla el flujo de las llamadas a los controladores y a sus respectivos metodos
+ */
 class FrontController
 {
+    /**
+     * @return void
+     * Este metodo nos controla que si no hemos llamado a ningun metodo ni accion nos llama a las definidas por defecto,
+     * y si realizamos alguna llamada nos lleva a ella
+     */
     public static function main()
     {
 
@@ -25,6 +34,7 @@ class FrontController
                 $action = $_GET['action'];
                 $controlador->$action();
             } elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
+
                 $action_default = ACTION_DEFAULT;
                 $controlador -> $action_default();
             }else {

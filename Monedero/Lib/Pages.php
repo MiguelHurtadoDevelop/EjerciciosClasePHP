@@ -8,7 +8,9 @@ class Pages{
             }
         }
 
+        require_once "Views/layout/header.php";
         require_once "$pageName.php";
+        require_once "Views/layout/footer.php";
 
     }
 }
