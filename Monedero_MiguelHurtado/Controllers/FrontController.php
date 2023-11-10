@@ -14,7 +14,7 @@ class FrontController
      * Este metodo nos controla que si no hemos llamado a ningun metodo ni accion nos llama a las definidas por defecto,
      * y si realizamos alguna llamada nos lleva a ella
      */
-    public static function main()
+    public static function main():void
     {
 
 

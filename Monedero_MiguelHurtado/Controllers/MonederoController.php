@@ -34,7 +34,7 @@
          * @return void
          * Metodo que obtiene mediante GET el indice del registro y lo borra, despues nos manda a la pagina principal
          */
-        public function borrarRegistro() {
+        public function borrarRegistro():void {
             if (isset($_GET['indice'])) {
                 $indiceABorrar = $_GET['indice'];
 
@@ -57,7 +57,7 @@
          * Metodo que obtiene mediante GET el $concepto, $fecha e $importe del nuevo registro y lo añade, despues nos
          * manda a la pagina principal
          */
-        public function añadirRegistro(){
+        public function añadirRegistro():void {
             $concepto=$_GET['concepto'];
             $fecha=$_GET['fecha'];
             $importe=$_GET['cantidad'];
@@ -75,7 +75,7 @@
          * Metodo que obtiene mediante GET el $concepto, $fecha , $importe Editados y el indice del Registro a
          * editar y lo edita, despues nos manda a la pagina principal
          */
-        public function editarRegistro(){
+        public function editarRegistro():void {
 
             $concepto=$_GET['concepto'];
             $fecha=$_GET['fecha'];
@@ -100,7 +100,7 @@
          * Metodo que obtiene mediante GET el concepto a buscar y lo busca entre los registros, , despues nos manda
          * a la pagina principal pasandole solo los registros encontrados
          */
-        public function buscarRegistro(){
+        public function buscarRegistro():void {
             $registroABuscar = $_GET['conceptoBuscar'];
             $registroBuscado = $this->monedero->buscarRegistro($registroABuscar);
 
@@ -111,7 +111,7 @@
          * @return void
          * Metodo que nos ordena por concepto los registros, despues nos manda a la pagina principal
          */
-        public function ordernarPorConcepto(){
+        public function ordernarPorConcepto():void {
                 $registros = $this->monedero->getRegistros();
 
                 usort($registros, function($a, $b) {
@@ -128,7 +128,7 @@
          * @return void
          * Metodo que nos ordena por fecha los registros, despues nos manda a la pagina principal
          */
-        public function ordernarPorFecha(){
+        public function ordernarPorFecha():void {
             $registros = $this->monedero->getRegistros();
 
             usort($registros, function ($a, $b) {
@@ -147,7 +147,7 @@
          * @return void
          * Metodo que nos ordena por Importe los registros, despues nos manda a la pagina principal
          */
-        public function ordernarPorImporte(){
+        public function ordernarPorImporte():void {
             $registros = $this->monedero->getRegistros();
         
             usort($registros, function($a, $b) {
@@ -164,7 +164,7 @@
          * @return void
          * Metodo que nos manda a la vista mostrarMonedero pasandole los registros de $monedero
          */
-        public function MostrarMonedero(Monedero $monedero = null){
+        public function MostrarMonedero(Monedero $monedero = null):void {
 
             if($monedero == null){
                 $monedero = $this->monedero;

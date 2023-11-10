@@ -26,7 +26,7 @@ class Monedero {
      * @return void
      * Metodo que nos carga el XML donde tenemos guardados los registros y no los va introduciendo en el array registros
      */
-    public function cargarRegistrosDesdeXML() {
+    public function cargarRegistrosDesdeXML():void {
         if (file_exists("Files/Monedero.xml")) {
             $xml = simplexml_load_file("Files/Monedero.xml");
 
@@ -59,7 +59,7 @@ class Monedero {
      * @return void
      * Metodo que introduce un nuevo $registro dado en el array registros y actualiza el XML
      */
-    public function agregarRegistro($registro)
+    public function agregarRegistro($registro):void
     {
         
         $this->registros[] = $registro;
@@ -73,7 +73,7 @@ class Monedero {
      * @return void
      * Metodo que actualiza un $registro con un $indice dado y actualiza el XML
      */
-    public function updateRegistro($indice, $nuevoRegistro) {
+    public function updateRegistro($indice, $nuevoRegistro):void {
 
         // Verifica si el índice existe en el array
         if (isset($this->registros[$indice])) {
@@ -89,7 +89,7 @@ class Monedero {
      * Metodo que busca en el array un $registro por un Concepto dado llamado $registroABuscar y nos devuelve los
      * registros que coincidan
      */
-    public function buscarRegistro($registroABuscar){
+    public function buscarRegistro($registroABuscar):array {
         $resultados = array_filter($this->registros, function ($registro) use ($registroABuscar) {
             // Comprueba si el término de búsqueda está en el concepto del registro
             return strpos($registro['Concepto'], $registroABuscar) !== false;
@@ -105,7 +105,7 @@ class Monedero {
      * Metodo que nos Actualiza el XML, si existe el fichero, lo borramos y lo creamos de nuevo con los nuevos registros
      * del array y si no existe lo crea directamente
      */
-    public function actualizarXML()
+    public function actualizarXML():void
     {
         //Comprobamos si existe el xml
         if(file_exists("Files/Monedero.xml")){
@@ -189,7 +189,7 @@ class Monedero {
      * @throws \DOMException
      * Metodo que actualiza el array Registros, por un array dado $registrosOrdenados, que trae el array ordenado
      */
-    function ordenarRegistros($registrosOrdenados) {
+    function ordenarRegistros($registrosOrdenados):void {
         $this->registros = $registrosOrdenados;
         $this->actualizarXML();
 
@@ -199,7 +199,7 @@ class Monedero {
      * @return array
      * Metodo para obtener los registros
      */
-    public function getRegistros() {
+    public function getRegistros():array {
         return $this->registros;
 
     }
