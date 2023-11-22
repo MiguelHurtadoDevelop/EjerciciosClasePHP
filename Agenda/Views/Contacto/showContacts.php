@@ -1,3 +1,5 @@
+
+
 <a href=<?=BASE_URL?>"?controller=Contacto&action=nuevocontacto">Nuevo Contacto</a>
 
 <table>
@@ -11,9 +13,14 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($contactos as $contacto):?>
+        <?php
+
+
+        foreach ($contactos as $contacto):
+            ?>
+
             <tr>
-                <th scope="row"><?php $contacto->getId()?></th>
+                <th scope="row"><?= $contacto->getId()?></th>
                 <td><?= $contacto->getNombre()?></td>
                 <td><?= $contacto->getApellidos()?></td>
                 <td><?= $contacto->getTelefono()?></td>
@@ -24,5 +31,6 @@
                     <a href=<?=BASE_URL?>"?id="<?= $contacto->getId()?>>Eliminar</a>
                 </td>
             </tr>
+         <?php endforeach; ?>
     </tbody>
 </table>

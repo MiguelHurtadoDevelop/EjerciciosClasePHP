@@ -8,4 +8,4 @@ define('BASE_DATOS', 'agenda');
 define('BASE_URL', 'index.php');
 
 define('CONTROLLER_DEFAULT', 'ContactoController');
-define('ACTION_DEFAULT', 'showAll');
+define('ACTION_DEFAULT', 'listar');

@@ -7,8 +7,6 @@ use PDOException;
 
 class Contacto
 {
-    private BaseDatos $conexion;
-    private mixed $stmt;
     function __construct(
         private string|null $id=null,
         private string $nombre='',
@@ -18,7 +16,6 @@ class Contacto
         private string $telefono='',
         private string $fecha_nacimiento=''
     ){
-        $this->conexion = new BaseDatos();
     }
 
     public function getId(): ?string
@@ -91,52 +88,6 @@ class Contacto
         $this->fecha_nacimiento = $fecha_nacimiento;
     }
 
-    public function insert()
-    {
-        try {
-          $this->stmt=$this->conexion->prepara("INSERT INTO contactos(id, nombre, apellidos, correo, direccion, telefono, fecha_nacimiento)
-            values (:id, :nombre, :apellidos, :correo, :direccion, :telefono, :fecha_nacimiento)");
-          $id = null;
-          $nombre=$this->nombre;
-          $apellidos=$this->apellidos;
-          $correo=$this->correo;
-          $direccion=$this->direccion;
-          $telefono=$this->telefono;
-          $fecha_nacimiento=$this->fecha_nacimiento;
-
-          $this->stmt->bindValue(':id', $id);
-          $this->stmt->bindValue(':nombre', $nombre);
-          $this->stmt->bindValue(':apellidos', $apellidos);
-          $this->stmt->bindValue(':correo', $correo);
-          $this->stmt->bindValue(':direccion', $direccion);
-          $this->stmt->bindValue(':telefono', $telefono);
-          $this->stmt->bindValue(':fecha_nacimiento', $fecha_nacimiento);
-
-          $this->stmt->execute();
-          $result = $this->stmt->rowCount();
-
-        } catch (PDOException $e){
-            $result = $e->getMessage();
-        }
-
-        $this->stmt->closeCursor();
-        $this->stmt = null;
-        return $result;
-    }
-
-    public function findAll(){
-        try{
-            $this->conexion->consulta("Select * from contactos");
-            $contactosData = $this->conexion->extraer_todos();
-            foreach ($contactosData as $contacctoData){
-                $contactos[]=Contacto::fromArray($contacctoData);
-            }
-        } catch (PDOException $err){
-            $contactos = null;
-        }
-
-        return $contactos;
-    }
 
     public static function fromArray(array $data){
         return new Contacto(

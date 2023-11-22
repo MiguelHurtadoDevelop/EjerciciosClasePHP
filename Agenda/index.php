@@ -1,9 +1,8 @@
 <?php
-    require_once("autoLoad.php");
-    require_once('./config/config.php');
-
-    require_once ("Views/Layout/header.html");
-    use Lib\BaseDatos;
-    use Lib\Pages;
-require_once ("Views/Layout/footer.html");
+require_once 'autoload.php';
+require_once 'Config/config.php';
+require_once './Views/Layout/header.html';
+use Controllers\FrontController;
+FrontController::main();
+require_once './Views/Layout/footer.html';
 ?>
