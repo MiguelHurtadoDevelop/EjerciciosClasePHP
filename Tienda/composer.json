@@ -1,0 +1,12 @@
+{
+    "name": "mh/tienda",
+    "description": "Ejemplo Proyecto PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mh\\Tienda\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
