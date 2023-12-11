@@ -5,6 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/EjemplosClases/otro_NameSpaces" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ModeloVistaControlador/BarajaMVC" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Monedero_MiguelHurtado" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Agenda/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/Agenda/vendor/stefangabos/zebra_pagination" />
+      <excludeFolder url="file://$MODULE_DIR$/Librerias/phpmailer/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/Librerias/phpmailer/vendor/phpmailer/phpmailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

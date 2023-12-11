@@ -4,15 +4,19 @@ use PDO;
 use PDOException;
 
 class BaseDatos{
-    private PDO $conexion;
+    private  $conexion;
     private mixed $resultado; //mixed novedad en PHP cualquier valor
+    private string $servidor;
+    private string $usuario;
+    private string $pass;
+    private string $base_datos;
 
-    function __construct(
-        private string $servidor = SERVIDOR,
-        private string $usuario = USUARIO,
-        private string $pass = PASSWORD,
-        private string $base_datos= BASE_DATOS
-    ){
+    function __construct(){
+
+        $this->servidor = $_ENV['DB_HOST'];
+        $this->usuario = $_ENV['DB_USER'];
+        $this->pass = $_ENV['DB_PASS'];
+        $this->base_datos = $_ENV['DB_DATABASE'];
         $this->conexion = $this->conectar();
     }
 

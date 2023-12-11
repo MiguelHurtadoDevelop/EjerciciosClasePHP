@@ -7,11 +7,11 @@
     use PanelAdministrador\Usuario as UsuarioAdmin;
 
     $usujuegos = new Usuario();
-    echo "<br><b>Usuario del paquete MisClases: </b>";
+    echo "<br><b>User del paquete MisClases: </b>";
     echo $usujuegos->getNombre();
 
     $usuAdmin = new UsuarioAdmin();
-    echo "<br><b>Usuario del paquete PanelAdministrador: </b>";
+    echo "<br><b>User del paquete PanelAdministrador: </b>";
     echo $usuAdmin->getNombre();
     echo "<br><b>El name space es: </b>";
     echo $usuAdmin->informacion();
@@ -27,5 +27,5 @@
 
     use PanelAdministrador\Principal;
     $principal = new Principal();
-    echo "<br>Usuario del paquete principal: ";
+    echo "<br>User del paquete principal: ";
     echo($principal->getUsuariop())->getNombre();

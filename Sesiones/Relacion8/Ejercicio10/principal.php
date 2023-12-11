@@ -1,12 +1,12 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (isset($_POST['Usuario']) && isset($_POST['Contraseña'])) {
+    if (isset($_POST['User']) && isset($_POST['Contraseña'])) {
 
-        if (($_POST['Usuario'] == 'usuario') && ($_POST['Contraseña'] == '1234')) {
+        if (($_POST['User'] == 'usuario') && ($_POST['Contraseña'] == '1234')) {
 
             session_start();
-            $_SESSION['Usuario'] = $_POST['Usuario'];
+            $_SESSION['User'] = $_POST['User'];
             header("Location:otrapagina.php");
         } else {
             echo "revisa usuario y contraseñas";

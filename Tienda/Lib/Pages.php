@@ -11,9 +11,9 @@ class Pages
             }
         }
 
-        require_once './Views/Layout/header.html';
-        require_once "./Views/$pageName.php";
-        require_once './Views/Layout/footer.html';
+        require_once 'views/layout/header.php';
+        require_once "Views/$pageName.php";
+        require_once 'views/layout/footer.php';
 
     }
 }

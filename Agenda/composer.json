@@ -1,0 +1,7 @@
+{
+    "require": {
+        "stefangabos/zebra_pagination": "^2.4",
+      "ext-pdo": "*",
+      "ext-mysqli": "*"
+    }
+}

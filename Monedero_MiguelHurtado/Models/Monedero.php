@@ -119,7 +119,7 @@ class Monedero {
             $xml->formatOutput = true;
 
 
-            $lista_registros = $xml->createElement('Registros');
+            $lista_registros = $xml->createElement('Registro');
             $xml->appendChild($lista_registros);
 
 
@@ -154,7 +154,7 @@ class Monedero {
             $xml->preserveWhiteSpace = false;
             $xml->formatOutput = true;
             // Create the root element
-            $lista_registros = $xml->createElement('Registros');
+            $lista_registros = $xml->createElement('Registro');
             $xml->appendChild($lista_registros);
 
 
@@ -187,7 +187,7 @@ class Monedero {
      * @param $registrosOrdenados
      * @return void
      * @throws \DOMException
-     * Metodo que actualiza el array Registros, por un array dado $registrosOrdenados, que trae el array ordenado
+     * Metodo que actualiza el array Registro, por un array dado $registrosOrdenados, que trae el array ordenado
      */
     function ordenarRegistros($registrosOrdenados):void {
         $this->registros = $registrosOrdenados;

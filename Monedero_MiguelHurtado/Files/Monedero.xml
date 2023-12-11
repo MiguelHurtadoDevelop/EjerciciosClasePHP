@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Registros/>
+<Registros>
+  <registro>
+    <Indice>0</Indice>
+    <Concepto>asdad</Concepto>
+    <Fecha>10/10/1004</Fecha>
+    <Importe>123</Importe>
+  </registro>
+</Registros>

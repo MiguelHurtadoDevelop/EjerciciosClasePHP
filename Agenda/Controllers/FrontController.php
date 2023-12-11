@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-require_once ('autoload.php');
+
 
 /**
  * Clase que nos controla el flujo de las llamadas a los controladores y a sus respectivos metodos
