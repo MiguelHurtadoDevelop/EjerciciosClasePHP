@@ -1,7 +1,6 @@
 <?php
-namespace Lib;
+namespace src\Lib;
 use PDO;
-use PDOException;
 
 class BaseDatos{
     private  $conexion;

@@ -1,5 +1,6 @@
 <?php
- use Utils\Utils;?>
+
+use Utils\Utils; ?>
 <?php if(isset($_SESSION['CategoriaAñadida']) && $_SESSION['CategoriaAñadida'] == 'complete'): ?>
     <strong>Categoria añadida correctamente</strong>
 <?php elseif(isset($_SESSION['CategoriaAñadida']) && $_SESSION['CategoriaAñadida'] == 'failed'):?>
@@ -7,7 +8,7 @@
 <?php endif;?>
 <?php Utils::deleteSession('CategoriaAñadida');?>
 
-<?php $categorias = \Controllers\CategoriaController::obtenerCategorias() ?>
+<?php $categorias = \src\controllers\CategoriaController::obtenerCategorias() ?>
 <a  href="<?=BASE_URL?>categoria/addCategory/">Añadir categoria</a>
 <table>
     <tr>

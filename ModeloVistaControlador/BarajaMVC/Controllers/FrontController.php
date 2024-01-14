@@ -2,6 +2,8 @@
 
 
 namespace Controllers;
+use src\controllers\ErrorController;
+
 require_once ('autoload.php');
 class FrontController
 {

@@ -1,10 +1,10 @@
 <?php
 
 namespace Repositories;
-use Lib\BaseDatos;
 use Models\Contacto;
 use PDO;
-use PDOException;
+use src\Lib\BaseDatos;
+
 class ContactoRepository
 {
     private BaseDatos $conexion;

@@ -3,8 +3,8 @@
 namespace Controllers;
 
 use Models\Contacto;
-use Lib\Pages;
 use Services\ContactoService;
+use src\Lib\Pages;
 
 class ContactoController
 

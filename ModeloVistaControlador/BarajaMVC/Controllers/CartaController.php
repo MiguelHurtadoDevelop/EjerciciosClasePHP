@@ -3,7 +3,8 @@
 namespace Controllers;
 
 use Models\Carta;
-use Lib\Pages;
+use src\Lib\Pages;
+
 class CartaController
 {
     private Carta $carta;

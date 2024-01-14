@@ -4,6 +4,8 @@ namespace Controllers;
 
 
 
+use src\controllers\ErrorController;
+
 /**
  * Clase que nos controla el flujo de las llamadas a los controladores y a sus respectivos metodos
  */

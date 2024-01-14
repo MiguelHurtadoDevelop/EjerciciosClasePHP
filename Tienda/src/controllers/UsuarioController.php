@@ -1,7 +1,7 @@
 <?php
-namespace Controllers;
-use Models\Usuario;
-use Lib\Pages;
+namespace src\controllers;
+use src\Lib\Pages;
+use src\models\Usuario;
 use Utils\Utils;
 
 class UsuarioController

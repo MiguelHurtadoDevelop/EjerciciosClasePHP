@@ -4,15 +4,15 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Mh\\Tienda\\": "./",
-            "Controllers\\": "./controllers",
-            "Models\\": "./models",
-            "Lib\\": "./lib",
-            "Repositories\\": "./repositories",
-            "Services\\": "./services",
-            "Utils\\": "./Utils"
-
-
+            "Mh\\Tienda\\": "src/",
+            "Controllers\\": "./src/controllers",
+            "Models\\": "./src/models",
+            "Lib\\": "./src/Lib",
+            "Repositories\\": "./src/repositories",
+            "Services\\": "./src/services",
+            "Utils\\": "./src/Utils",
+            "Views\\": "src/views",
+            "Routes\\": "src/Routes"
         }
     },
     "minimum-stability": "stable",

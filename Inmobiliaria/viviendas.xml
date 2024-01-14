@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lista_vivienda>
+  <vivienda>
+    <tipo_vivienda>Adosado</tipo_vivienda>
+    <zona>Zaidín</zona>
+    <direccion>asfasdf</direccion>
+    <num_dormitorios>2</num_dormitorios>
+    <precio>1234</precio>
+    <tamanio>120</tamanio>
+    <extra>Jardín</extra>
+    <extra>Garaje</extra>
+    <foto>1436542079_444263_1436543394_noticia_normal.jpg</foto>
+    <observaciones>asdfsafsdaf</observaciones>
+    <ganacias>345.52</ganacias>
+  </vivienda>
+</lista_vivienda>

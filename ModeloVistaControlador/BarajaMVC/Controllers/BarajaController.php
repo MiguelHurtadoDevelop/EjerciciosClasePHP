@@ -2,7 +2,8 @@
     namespace Controllers;
 
     use Models\Barajases;
-    use Lib\Pages;
+    use src\Lib\Pages;
+
     class BarajaController{
         private Barajases $baraja;
         private Pages $pages;

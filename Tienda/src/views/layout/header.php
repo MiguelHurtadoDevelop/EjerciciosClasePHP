@@ -25,7 +25,7 @@
     </nav>
 </header>
 
-<?php $categorias = \Controllers\CategoriaController::obtenerCategorias()?>
+<?php $categorias = \src\controllers\CategoriaController::obtenerCategorias()?>
 
 <nav id="menu_cat">
     <ul>

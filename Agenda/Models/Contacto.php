@@ -1,9 +1,6 @@
 <?php
 
 namespace Models;
-use Lib\BaseDatos;
-use PDO;
-use PDOException;
 
 class Contacto
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lib;
+namespace src\Lib;
 
 class Pages
 {
@@ -11,9 +11,12 @@ class Pages
             }
         }
 
-        require_once 'views/layout/header.php';
-        require_once "Views/$pageName.php";
-        require_once 'views/layout/footer.php';
+        $arriba = dirname(__DIR__,1);
+        $head=$arriba. "\views\layout,header.php";
+
+        require_once $arriba.'/views/layout/header.php';
+        require_once $arriba."/views/$pageName.php";
+        require_once $arriba.'/views/layout/footer.php';
 
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
- use Utils\Utils;?>
+use Utils\Utils; ?>
 <?php if(isset($_SESSION['ProductoAñadido']) && $_SESSION['ProductoAñadido'] == 'complete'): ?>
     <strong>Producto añadido correctamente</strong>
 <?php elseif(isset($_SESSION['ProductoAñadido']) && $_SESSION['ProductoAñadido'] == 'failed'):?>
@@ -8,7 +8,7 @@
 <?php endif;?>
 <?php Utils::deleteSession('ProductoAñadido');?>
 
-<?php $productos = \Controllers\ProductoController::obtenerProductos() ?>
+<?php $productos = \src\controllers\ProductoController::obtenerProductos() ?>
 <a  href="<?=BASE_URL?>producto/addProduct/">Añadir Producto</a>
 <table>
 

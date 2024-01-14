@@ -1,9 +1,8 @@
 <?php
 
-namespace Controllers;
-use Lib\Pages;
-use Utils\Utils;
-use Models\Producto;
+namespace src\controllers;
+use src\Lib\Pages;
+use src\models\Producto;
 
 
 class ProductoController

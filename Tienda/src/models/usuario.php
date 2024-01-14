@@ -1,11 +1,10 @@
 <?php
 
-namespace models;
-
-use Lib\BaseDatos;
+namespace src\models;
 
 use PDO;
 use PDOException;
+use src\Lib\BaseDatos;
 
 class Usuario
 {

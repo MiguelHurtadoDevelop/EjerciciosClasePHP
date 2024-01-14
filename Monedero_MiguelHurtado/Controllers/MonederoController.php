@@ -4,7 +4,7 @@
 
 
     use Models\Monedero;
-    use Lib\Pages;
+    use src\Lib\Pages;
 
 
     class MonederoController{

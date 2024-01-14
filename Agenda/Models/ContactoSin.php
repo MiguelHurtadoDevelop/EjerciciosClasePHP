@@ -2,9 +2,8 @@
 
 namespace Models;
 
-use Lib\BaseDatos;
-use PDO;
 use PDOException;
+use src\Lib\BaseDatos;
 
 class ContactoSin
 {

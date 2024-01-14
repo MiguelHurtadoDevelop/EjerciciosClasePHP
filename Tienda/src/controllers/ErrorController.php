@@ -1,6 +1,6 @@
 <?php
 
-namespace controllers;
+namespace src\controllers;
 /**
  *Clase que nos controlara los errores producidos
  */
